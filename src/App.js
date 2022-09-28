@@ -1,23 +1,19 @@
-import logo from './levvel-logo.svg';
-import './App.css';
-
+import logo from "./levvel-logo.svg";
+import "./App.css";
+import TopBar from "./components/TopBar";
+import Blogs from "./components/Blogs";
+import Author from "./components/Author";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <TopBar />
+      <Router>
+        <Routes>
+          <Route path="/" element={<Blogs />} />
+          <Route path="/author" element={<Author />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
