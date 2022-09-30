@@ -1,8 +1,9 @@
 import React from "react";
-import { Link } from "react-dom";
 import logo from "../levvel-logo.svg";
 import Divider from "@mui/material/Divider";
 import "./TopBar.scss";
+
+//Used component from Material UI library for the divider between logo and Blogs heading.
 
 export default function TopBar() {
   return (

@@ -6,10 +6,12 @@ import { IconButton } from "@mui/material";
 import Divider from "@mui/material/Divider";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
+//useLocation hook utlized to get state from Blog component.
+
 export default function Author() {
   const navigate = useNavigate();
   const location = useLocation();
-  const userId = location.state.data;
+  const userId = location.state.userId;
   const blog = Data();
   return (
     <div className="container">
@@ -34,8 +36,8 @@ export default function Author() {
             if (blog.userId === userId)
               return (
                 <div>
-                  <h2>{blog.title}</h2>
-                  <p>{blog.body}</p>
+                  <h2 key={blog.title}>{blog.title}</h2>
+                  <p key={blog.body}>{blog.body}</p>
                   <Divider
                     orientation="horizontal"
                     flexItem

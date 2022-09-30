@@ -5,6 +5,8 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { IconButton } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
+//useNavigate hook utlized for routing and state purposes for the author component.
+
 export default function Blog(props) {
   const navigate = useNavigate();
   return (
@@ -16,8 +18,8 @@ export default function Blog(props) {
             className="wrapper"
             onClick={() => {
               {
-                const data = props.blog.userId;
-                navigate("/author", { state: { data } });
+                const userId = props.blog.userId;
+                navigate("/author", { state: { userId } });
               }
             }}
           >
